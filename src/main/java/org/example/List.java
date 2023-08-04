@@ -1,32 +1,21 @@
 package org.example;
 
 public class List {
+    public static void main(String[] args){
 
-    Node head;
-    Node tail;
+        tree<Integer> tree = new tree<>();
 
-    public void revert(){
-        Node currentNode = head;
-        while(currentNode!= null){
-            Node next = currentNode.next;
-            Node previous = currentNode.previous;
-            currentNode.next = previous;
-            currentNode.previous = next;
-            if (previous == null){
-                tail = currentNode;
-            }
-            if (next == null){
-                head = currentNode;
-            }
-
-            currentNode = next;
-        }
+        tree.add(5);
+        tree.add(9);
+        tree.add(8);
+        tree.add(7);
+        tree.add(6);
+        tree.add(12);
+        tree.add(1);
+        System.out.println(tree.contain(3));
+        tree.print();
     }
-    public class Node {
-        int value;
-        Node next;
 
-        Node previous;
-    }
+
 }
 
